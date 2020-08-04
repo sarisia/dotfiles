@@ -3,8 +3,8 @@ boot: init update
 
 .PHONY: install
 init:
-	. init.sh
+	bash -x init.sh
 
 .PHONY: update
 update:
-	. update.sh
+	bash -x update.sh
