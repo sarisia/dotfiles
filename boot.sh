@@ -1,7 +1,6 @@
 #!/bin/bash
 
-export DOTPATH="~/dotfiles"
-
+DOTPATH="~/dotfiles"
 REQUIREMENTS=("git" "make" "curl")
 
 echo "Checking requirements..."
