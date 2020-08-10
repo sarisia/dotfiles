@@ -5,6 +5,7 @@ echo "Base DOTPATH: ${DOTPATH}"
 echo "Setting up symlinks..."
 ln -sf ${DOTPATH}/dot/.bash_profile ~/.bash_profile
 ln -sf ${DOTPATH}/dot/.bashrc ~/.bashrc
+ln -sf ${DOTPATH}/dot/.hushlogin ~/.hushlogin
 
 mkdir -p ~/.config/fish/functions
 ln -sf ${DOTPATH}/dot/.config/fish/config.fish ~/.config/fish/config.fish
