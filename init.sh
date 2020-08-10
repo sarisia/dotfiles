@@ -1,9 +1,20 @@
 #!/bin/bash
 
 echo "Installing homebrew..."
-# https://brew.sh/index_ja
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# if brew exists, skip.
+if [[ ! -x $(command -v brew) ]]; then
+    # https://brew.sh/index_ja
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    if [[ ${OSTYPE} == linux* ]]; then
+        eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    fi
+fi
+
+# check homebrew is installed correctly
+if [[ ! -x $(command -v brew) ]]; then
+    echo "It seems brew is not installed correctly."
+    exit 1
+fi
 
 echo "Installing tools..."
 # TODO: export install list to file

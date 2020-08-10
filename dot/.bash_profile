@@ -2,8 +2,10 @@
 # ~/.bash_profile
 #
 
-# Linuxbrew
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# Homebrew (Linuxbrew)
+if [[ ${OSTYPE} == linux* ]]; then
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
 
 # Load .bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc
