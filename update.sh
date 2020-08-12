@@ -11,6 +11,7 @@ mkdir -p ~/.config/fish/functions
 ln -sf ${DOTPATH}/dot/.config/fish/config.fish ~/.config/fish/config.fish
 ln -sf ${DOTPATH}/dot/.config/fish/fishfile ~/.config/fish/fishfile
 ln -sf ${DOTPATH}/dot/.config/fish/functions/r.fish ~/.config/fish/functions/r.fish
+ln -sf ${DOTPATH}/dot/.config/fish/functions/b.fish ~/.config/fish/functions/b.fish
 ln -sf ${DOTPATH}/dot/.config/fish/functions/root.fish ~/.config/fish/functions/root.fish
 
 echo "Run fisher"
