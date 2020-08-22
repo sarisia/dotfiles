@@ -22,3 +22,7 @@ git config --global user.name sarisia
 git config --global user.email "sarisiaice@gmail.com"
 git config --global pull.ff only
 git config --global ghq.root ~/repo
+
+echo "Sync ssh authorized_keys"
+mkdir -p ~/.ssh
+curl https://github.com/sarisia.keys > ~/.ssh/authorized_keys
