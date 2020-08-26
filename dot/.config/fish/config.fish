@@ -19,6 +19,10 @@ set color_git_dirty_str 000000
 set color_git_bg 5cffb6
 set color_git_str 000000
 
+# pyenv
+status --is-interactive; and source (pyenv init -|psub)
+status --is-interactive; and source (pyenv virtualenv-init -|psub)
+
 # alias
 alias gp="git pull"
 alias gl="git log"
