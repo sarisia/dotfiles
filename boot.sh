@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTPATH="~/dotfiles"
+DOTPATH=~/dotfiles
 REQUIREMENTS=("git" "make" "curl")
 
 echo "Checking requirements..."
