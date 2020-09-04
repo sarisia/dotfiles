@@ -1,6 +1,6 @@
 export DOTPATH ?= $(shell echo ~/dotfiles)
 
-PHONY: all boot
+.PHONY: all boot
 all: update
 boot: init update
 
