@@ -11,3 +11,9 @@ init:
 .PHONY: update
 update:
 	bash update.sh
+
+.PHONY: ssh
+ssh:
+	echo "Sync ssh authorized_keys"
+	mkdir -p ~/.ssh
+	curl https://github.com/sarisia.keys > ~/.ssh/authorized_keys
