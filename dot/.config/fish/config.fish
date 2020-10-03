@@ -23,6 +23,9 @@ set color_git_str 000000
 status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
+# nvm
+emit init_nvm
+
 # alias
 alias gp="git pull"
 alias gl="git log"

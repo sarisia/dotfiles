@@ -18,7 +18,7 @@ fi
 
 echo "Installing tools..."
 # TODO: export install list to file
-DOTTOOLS=("fish" "ghq" "peco" "pyenv" "pyenv-virtualenv")
+DOTTOOLS=("fish" "ghq" "peco" "pyenv" "pyenv-virtualenv" "nvm")
 brew install ${DOTTOOLS[@]}
 
 echo "Initialize fish"
