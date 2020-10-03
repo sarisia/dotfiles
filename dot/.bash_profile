@@ -4,6 +4,7 @@
 
 # env
 export EDITOR=nano
+export PATH=~/go/bin:$PATH
 
 # Homebrew (Linuxbrew)
 if [[ ${OSTYPE} == linux* ]]; then
