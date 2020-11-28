@@ -17,8 +17,15 @@ ln -sf ${DOTPATH}/dot/.config/fish/functions/root.fish ~/.config/fish/functions/
 echo "Run fisher"
 fish -c fisher
 
+echo "Make sure ~/repo directory exists"
+mkdir -p ~/repo
+
 echo "Configure git"
 git config --global user.name sarisia
 git config --global user.email "sarisiaice@gmail.com"
 git config --global pull.ff only
 git config --global ghq.root ~/repo
+
+if [[ ${OSTYPE} == linux* ]]; then
+    git config --global credential.helper store
+fi

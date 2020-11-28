@@ -23,6 +23,3 @@ brew install ${DOTTOOLS[@]}
 
 echo "Initialize fish"
 fish init.fish
-
-echo "Create repo directory"
-mkdir -p ~/repo
