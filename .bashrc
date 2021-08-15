@@ -4,5 +4,7 @@ case $- in
       *) return;;
 esac
 
-# exec fish
-exec fish
+# exec fish if exist
+if command -v fish &> /dev/null ; then
+    exec fish
+fi
