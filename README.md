@@ -22,7 +22,8 @@
 
 ## Files
 
-- `.profile`: configurations not depends on shell (PATH, EDITOR or something like that)
+- `.profile`: configurations not depends on shell (PATH, EDITOR, ...)
 - `.zprofile`, `.bash_profile`: simple script for loading `.profile` and `.zshrc`
 or `.bashrc` depends on shell (in order to avoid shells' configuration files loading
 order problem. see [bash manual](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html))
+- `.bashrc`, `.zshrc`: shell-related configurations (alias, ...)
