@@ -12,3 +12,5 @@ fi
 # bootstrap
 git clone https://github.com/sarisia/dotfiles.git ~/dotfiles
 (cd ~/dotfiles && ./install.sh)
+
+echo "dotfiles is ready... maybe?"
