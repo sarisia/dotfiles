@@ -3,7 +3,7 @@ if [ -f "$HOME/.profile" ]; then
 	. "$HOME/.profile"
 fi
 
-# bash-specific
-if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+# zsh-specific
+if [ -f "$HOME/.zshrc" ]; then
+	. "$HOME/.zshrc"
 fi

@@ -1,6 +1,6 @@
 # sarisia/dotfiles
 
-- Easy setup with `curl -L boot.sarisia.cc | bash` (this redirects to `bootstrap.sh`)
+- Easy setup with `curl -L boot.sarisia.cc | bash` (this redirects to `curlboot.sh`)
 - zsh and bash support (works out of the box with macOS)
 - Codespaces support (See [Structure](#structure))
 
