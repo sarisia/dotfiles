@@ -20,8 +20,6 @@ set color_git_bg 5cffb6
 set color_git_str 000000
 
 # alias
-alias gp="git pull"
-alias gl="git log"
-alias gs="git status"
-alias gc="git checkout"
-alias gb="git branch"
+alias ll="ls -l"
+alias lla="ls -al"
+alias sso="aws sso login"
