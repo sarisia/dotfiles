@@ -10,9 +10,21 @@ GLOBIGNORE=".:..:.git"
 
 # toplevel dotfiles
 for f in .* ; do
-    if [ -f "$f" ] ; then
-        ln -sf "$PWD/$f" "$HOME/$f"
+    if [ ! -f "$f" ] ; then
+        continue
     fi
+
+    # if the target file already exists, rename to name.old
+    if [ -f "$HOME/$f" ]; then
+        # if symlink, remove. Otherwise, rename.
+        if [ -L "$HOME/$f" ] ; then
+            rm "$HOME/$f"
+        else
+            mv "$HOME/$f" "$HOME/$f.old"
+        fi
+    fi
+
+    ln -sf "$PWD/$f" "$HOME/$f"
 done
 
 # everything in .config dir
@@ -22,8 +34,13 @@ mkdir -p "$HOME/.config"
 # then link everything
 for f in .config/* ; do
     # if the target dir is already exists, rename to name.old
-    if [ -d "$HOME/$f" ] ; then
-        mv "$HOME/$f/" "$HOME/$f.old/"
+    if [ -e "$HOME/$f" ] ; then
+        # if symlink, remove. Otherwise, rename.
+        if [ -L "$HOME/$f" ] ; then
+            rm "$HOME/$f"
+        else
+            mv "$HOME/$f" "$HOME/$f.old"
+        fi
     fi
 
     ln -sf "$PWD/$f" "$HOME/$f"
