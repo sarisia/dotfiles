@@ -23,3 +23,8 @@ set color_git_str 000000
 alias ll="ls -l"
 alias lla="ls -al"
 alias sso="aws sso login"
+
+# asdf
+if type -q brew && test -e (brew --prefix asdf)"/libexec/asdf.fish"
+    source (brew --prefix asdf)/libexec/asdf.fish
+end
