@@ -9,8 +9,15 @@ if [[ ! -x $(command -v git) ]]; then
     exit 1
 fi
 
+# check curl
+if [[ ! -x $(command -v curl) ]]; then
+    echo "curl is not installed."
+    exit 1
+fi
+
+
 # bootstrap
 git clone https://github.com/sarisia/dotfiles.git ~/dotfiles
 (cd ~/dotfiles && ./install.sh)
 
-echo "dotfiles is ready... maybe?"
+echo "dotfiles is ready!"

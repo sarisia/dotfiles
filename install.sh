@@ -45,3 +45,7 @@ for f in .config/* ; do
 
     ln -sf "$PWD/$f" "$HOME/$f"
 done
+
+# fish
+echo "try installing fish shell..."
+(cd ~/dotfiles && ./install_fish.sh)
