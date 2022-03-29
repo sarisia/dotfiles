@@ -27,3 +27,7 @@
 or `.bashrc` depends on shell (in order to avoid shells' configuration files loading
 order problem. see [bash manual](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html))
 - `.bashrc`, `.zshrc`: shell-related configurations (alias, ...)
+
+# Refs
+
+- [Difference between Login Shell and Non-Login Shell? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/38175/difference-between-login-shell-and-non-login-shell)
