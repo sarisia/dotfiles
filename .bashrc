@@ -7,5 +7,7 @@ esac
 
 # exec fish if exist
 if command -v fish &> /dev/null ; then
-    exec fish
+    if [ -t 1 ]; then
+        exec fish
+    fi
 fi
