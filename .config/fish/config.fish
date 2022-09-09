@@ -28,3 +28,7 @@ alias sso="aws sso login"
 if type -q brew && test -e (brew --prefix asdf)"/libexec/asdf.fish"
     source (brew --prefix asdf)/libexec/asdf.fish
 end
+
+# vscode integration
+string match -q "$TERM_PROGRAM" "vscode"
+and . (code --locate-shell-integration-path fish)
