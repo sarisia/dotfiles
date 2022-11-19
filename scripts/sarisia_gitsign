@@ -10,6 +10,7 @@ ssh-keygen -q -t ed25519 -f $KEYNAME || true
 git config --global gpg.format ssh
 git config --global user.signingkey $KEYNAME
 git config --global commit.gpgsign true
+git config --global tag.gpgsign true
 
 echo Add the following key to GitHub:
 echo
