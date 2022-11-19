@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+cat << EOF
+Available scripts:
+    sarisia_homebrew: install homebrew
+    sarisia_authkey: sync ~/.ssh/authorized_keys to github.com/sarisia.keys
+EOF

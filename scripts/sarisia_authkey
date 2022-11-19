@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+mkdir -p ~/.ssh
+curl -fsSL https://github.com/sarisia.keys > ~/.ssh/authorized_keys
