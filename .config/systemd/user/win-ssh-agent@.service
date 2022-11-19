@@ -1,0 +1,9 @@
+[Unit]
+Description = Connect to ssh-agent on Windows
+
+[Service]
+Type = simple
+ExecStart = npiperelay.exe -ei -s //./pipe/openssh-ssh-agent
+StandardInput = socket
+StandardOutput = socket
+StandardError = journal

@@ -1,0 +1,9 @@
+[Unit]
+Description = Connect to ssh-agent on Windows
+
+[Socket]
+ListenStream = %h/.ssh/agent.sock
+Accept = yes
+
+[Install]
+WantedBy = sockets.target
