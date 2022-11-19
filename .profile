@@ -1,5 +1,5 @@
 # script directory
-PATH="$HOME/dotfiles/scripts:$PATH"
+export PATH="$HOME/dotfiles/scripts:$PATH"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -34,3 +34,8 @@ case "$OSTYPE" in
         fi
         ;;
 esac
+
+# SSH auth sock
+if [ -S "$HOME/.ssh/agent.sock" ] ; then
+    export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
+fi
