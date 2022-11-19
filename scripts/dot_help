@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+cat << EOF
+Available scripts:
+    dot_authkey: sync ~/.ssh/authorized_keys to github.com/sarisia.keys
+    dot_dotfiles: update dotfiles
+    dot_homebrew: install homebrew
+    dot_ssh_agent_win: setup ssh-agent forwarding from Windows
+EOF

@@ -45,3 +45,5 @@ for f in .config/* ; do
 
     ln -sf "$PWD/$f" "$HOME/$f"
 done
+
+echo "installed!"
