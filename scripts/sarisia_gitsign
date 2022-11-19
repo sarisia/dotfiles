@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+KEYNAME=~/.ssh/gitsign_ed25519
+
+mkdir -p ~/.ssh
+ssh-keygen -q -t ed25519 -f $KEYNAME || true
+
+git config --global gpg.format ssh
+git config --global user.signingkey $KEYNAME
+
+echo Add the following key to GitHub:
+echo
+echo $(cat $KEYNAME.pub)
+echo
+echo https://github.com/settings/keys
