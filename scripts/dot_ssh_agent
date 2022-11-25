@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+NPIPERELAY=$(which npiperelay.exe)
+
+if [[ -n "$NPIPERELAY" ]] ; then
+    # found npiperelay
+    if [[ ! "$NPIPERELAY" == /usr/local/bin/* ]] ; then
+        echo "Creating symlink /usr/local/bin/npiperelay.exe ..."
+        sudo ln -sf $(which npiperelay.exe) /usr/local/bin
+    else
+        echo "npiperelay.exe is already configured"
+    fi
+else
+    # no npiperelay, just warn
+    echo "npiperelay.exe is missing. Skipping..."
+fi
+
+echo "Enabling systemd (user) unit..."
+systemctl --user daemon-reload
+systemctl --user enable --now win-ssh-agent.socket

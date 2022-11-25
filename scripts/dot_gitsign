@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+if [[ -z "$*" ]] ; then
+    echo "Usage: $0 <pubkey>"
+    echo "    $0 ssh-ed25519 AAA..."
+    echo ""
+    echo '`ssh-add -L` to list available keys'
+    exit 1
+fi
+
+echo "Configuring git..."
+git config --global gpg.format ssh
+git config --global user.signingkey "$*"
+git config --global commit.gpgsign true
+git config --global tag.gpgsign true
