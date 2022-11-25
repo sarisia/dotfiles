@@ -10,11 +10,12 @@ if [[ -n "$NPIPERELAY" ]] ; then
     else
         echo "npiperelay.exe is already configured"
     fi
+
+    echo "Enabling systemd (user) unit..."
+    systemctl --user daemon-reload
+    systemctl --user enable --now win-ssh-agent.socket
+    
 else
     # no npiperelay, just warn
     echo "npiperelay.exe is missing. Skipping..."
 fi
-
-echo "Enabling systemd (user) unit..."
-systemctl --user daemon-reload
-systemctl --user enable --now win-ssh-agent.socket
