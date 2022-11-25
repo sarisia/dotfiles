@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 NPIPERELAY=$(which npiperelay.exe)
 
 if [[ -n "$NPIPERELAY" ]] ; then
