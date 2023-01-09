@@ -4,6 +4,12 @@
 - zsh and bash support (works out of the box with macOS)
 - Codespaces support (See [Structure](#structure))
 
+# Install
+
+```
+$ curl -L boot.sarisia.cc | bash
+```
+
 # Structure
 
 ## Initialize flow
