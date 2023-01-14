@@ -1,3 +1,12 @@
+# macOS
 .DS_Store
-.docker
+
+# Windows
 *:Zone.Identifier
+
+# devcontainers
+.devcontainer
+.devcontainer.json
+
+# I don't know what the fuck this is
+.docker
