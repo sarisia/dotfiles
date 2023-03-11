@@ -2,6 +2,14 @@
 
 set -e
 
+# dump current settings
+echo "Current settings"
+echo "     gpg.format: `git config --global --get gpg.format`"
+echo "user.signingkey: `git config --global --get user.signingkey`"
+echo " commit.gpgsign: `git config --global --get commit.gpgsign`"
+echo "    tag.gpgsign: `git config --global --get tag.gpgsign`"
+echo ""
+
 if [[ -z "$*" ]] ; then
     echo "Usage: $0 <pubkey>"
     echo "    $0 ssh-ed25519 AAA..."
