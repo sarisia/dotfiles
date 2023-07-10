@@ -1,3 +1,4 @@
 function gp --wraps='git pull' --description 'alias gp git pull'
-  git pull --recurse-submodules $argv; 
+  git pull $argv;
+  git submodule update --init --recursive;
 end
