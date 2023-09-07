@@ -49,6 +49,11 @@ done
 # create empty ~/.gitconfig for local git config
 # by default, `git config` writes config to ~/.config/git/config, which will be
 # pushed to dotfiles. Creating empty ~/.gitconfig prevents this.
-touch $HOME/.gitconfig
+# Also, skip for devcontainer. It copies host's .gitconfig to container if not exists.
+if [ "$REMOTE_CONTAINERS" == 'true' ]; then
+    true
+else
+    touch $HOME/.gitconfig
+fi
 
 echo "installed!"
