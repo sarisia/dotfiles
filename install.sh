@@ -46,4 +46,9 @@ for f in .config/* ; do
     ln -sf "$PWD/$f" "$HOME/$f"
 done
 
+# create empty ~/.gitconfig for local git config
+# by default, `git config` writes config to ~/.config/git/config, which will be
+# pushed to dotfiles. Creating empty ~/.gitconfig prevents this.
+touch $HOME/.gitconfig
+
 echo "installed!"
