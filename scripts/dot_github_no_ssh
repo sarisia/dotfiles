@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+git config --file ~/.config/git/config --unset "url.git@github.com:.insteadof"
