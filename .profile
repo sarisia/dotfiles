@@ -1,5 +1,7 @@
-# script directory
+# dotfiles script directory
 export PATH="$HOME/dotfiles/scripts:$PATH"
+
+# common bin path
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 

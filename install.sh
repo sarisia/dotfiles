@@ -57,4 +57,11 @@ else
     touch $HOME/.gitconfig
 fi
 
+# create symlink points dotfiles directory if $HOME/dotfiles does not exist
+# since some runtimes like github codespaces clones dotfiles directory to
+# weird path like `/workspaces/.codespaces/.persistedshare/dotfiles`
+if [ ! -e "$HOME/dotfiles" ]; then
+    ln -sf "$PWD" "$HOME/dotfiles"
+fi
+
 echo "installed!"
