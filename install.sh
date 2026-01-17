@@ -47,6 +47,8 @@ for f in .config/* ; do
 done
 
 # claude code
+# required by devcontainer feature ghcr.io/sarisia/devcontainer-features/claude-code
+touch "$HOME/.claude.json"
 mkdir -p "$HOME/.claude"
 
 if [ -f "$HOME/.claude/CLAUDE.md" ]; then
