@@ -46,6 +46,20 @@ for f in .config/* ; do
     ln -sf "$PWD/$f" "$HOME/$f"
 done
 
+# claude code
+mkdir -p "$HOME/.claude"
+
+if [ -f "$HOME/.claude/CLAUDE.md" ]; then
+    # if symlink, remove. Otherwise, rename.
+    if [ -L "$HOME/.claude/CLAUDE.md" ] ; then
+        rm "$HOME/.claude/CLAUDE.md"
+    else
+        mv "$HOME/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md.old"
+    fi
+fi
+
+ln -sf "$PWD/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+
 # create empty ~/.gitconfig for local git config
 # by default, `git config` writes config to ~/.config/git/config, which will be
 # pushed to dotfiles. Creating empty ~/.gitconfig prevents this.

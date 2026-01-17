@@ -1,0 +1,9 @@
+- All files may contain comments from user which starts with `// claude:`. Always resolve them and erase that line.
+- Always dump plans to the project's `PLAN.md` file.
+    - If the project has `PLAN.md` file, always read them to get previous context.
+- Always dump todos to the project's `TODO.md` file.
+    - Section order: TODO (user appends new task here so process them and move to appropriate sections below), Future Enhancements, Skipped, Completed.
+    - If the project has `TODO.md` file, always read them to get previous context.
+    - User may manually edit this file. Always consult the file before processing new user prompts.
+    - Do not get rid of skipped todos, move them to skipped section with explanation.
+- user prompt `go` or `continue` means user reviewed the changes and added comments so continue processing them.
