@@ -1,3 +1,3 @@
 function root
-    cd (git rev-parse --show-toplevel)
+    cd (git rev-parse --git-common-dir)/..
 end
