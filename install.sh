@@ -46,11 +46,7 @@ for f in .config/* ; do
     ln -sf "$PWD/$f" "$HOME/$f"
 done
 
-# claude code
-# required by devcontainer feature ghcr.io/sarisia/devcontainer-features/claude-code
-touch "$HOME/.claude.json"
-mkdir -p "$HOME/.claude"
-
+# ai agents
 if [ -f "$HOME/.claude/CLAUDE.md" ]; then
     # if symlink, remove. Otherwise, rename.
     if [ -L "$HOME/.claude/CLAUDE.md" ] ; then
@@ -59,8 +55,19 @@ if [ -f "$HOME/.claude/CLAUDE.md" ]; then
         mv "$HOME/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md.old"
     fi
 fi
+if [ -f "$HOME/.config/opencode/AGENTS.md" ]; then
+    # if symlink, remove. Otherwise, rename.
+    if [ -L "$HOME/.config/opencode/AGENTS.md" ] ; then
+        rm "$HOME/.config/opencode/AGENTS.md"
+    else
+        mv "$HOME/.config/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md.old"
+    fi
+fi
 
-ln -sf "$PWD/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+mkdir -p "$HOME/.claude"
+ln -sf "$PWD/ai/AGENTS.md" "$HOME/.claude/CLAUDE.md"
+mkdir -p "$HOME/.config/opencode"
+ln -sf "$PWD/ai/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
 
 # create empty ~/.gitconfig for local git config
 # by default, `git config` writes config to ~/.config/git/config, which will be
