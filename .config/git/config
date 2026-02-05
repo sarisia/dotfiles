@@ -6,5 +6,7 @@
 	rebase = true
 [push]
 	autoSetupRemote = true
+# [worktree]
+# 	useRelativePaths = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
