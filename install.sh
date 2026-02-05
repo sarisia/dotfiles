@@ -47,27 +47,28 @@ for f in .config/* ; do
 done
 
 # ai agents
-if [ -f "$HOME/.claude/CLAUDE.md" ]; then
-    # if symlink, remove. Otherwise, rename.
-    if [ -L "$HOME/.claude/CLAUDE.md" ] ; then
-        rm "$HOME/.claude/CLAUDE.md"
-    else
-        mv "$HOME/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md.old"
+for p in \
+    "/.claude/CLAUDE.md" \
+    "/.config/opencode/AGENTS.md" \
+    "/.config/opencode/opencode.jsonc" \
+; do
+    path="${HOME}${p}"
+    echo "Processing $path"
+    if [ -f "$path" ]; then
+        # if symlink, remove. Otherwise, rename.
+        if [ -L "$path" ] ; then
+            rm "$path"
+        else
+            mv "$path" "$path.old"
+        fi
     fi
-fi
-if [ -f "$HOME/.config/opencode/AGENTS.md" ]; then
-    # if symlink, remove. Otherwise, rename.
-    if [ -L "$HOME/.config/opencode/AGENTS.md" ] ; then
-        rm "$HOME/.config/opencode/AGENTS.md"
-    else
-        mv "$HOME/.config/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md.old"
-    fi
-fi
+done
 
 mkdir -p "$HOME/.claude"
 ln -sf "$PWD/ai/AGENTS.md" "$HOME/.claude/CLAUDE.md"
 mkdir -p "$HOME/.config/opencode"
 ln -sf "$PWD/ai/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
+ln -sf "$PWD/ai/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
 
 # create empty ~/.gitconfig for local git config
 # by default, `git config` writes config to ~/.config/git/config, which will be
