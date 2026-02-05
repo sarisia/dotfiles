@@ -5,7 +5,10 @@
       // https://github.com/github/github-mcp-server/blob/main/docs/remote-server.md
       "enabled": true,
       "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp/readonly"
+      "url": "https://api.githubcopilot.com/mcp/readonly",
+      "headers": {
+        "Authorization": "Bearer {file:~/.local/share/opencode/github_token}"
+      }
     }
   }
 }

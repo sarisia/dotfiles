@@ -1,0 +1,21 @@
+#!/bin/bash
+
+TARGET_FILE="$HOME/.local/share/opencode/github_token"
+
+if [ -f "$TARGET_FILE" ]; then
+    echo "Token file already exists at $TARGET_FILE. Skipping."
+    exit 0
+fi
+
+read -r -s -p "Enter GitHub PAT: " TOKEN
+echo ""
+
+if [ -z "$TOKEN" ]; then
+    echo "Input is empty. Skipping."
+    exit 0
+fi
+
+mkdir -p "$(dirname "$TARGET_FILE")"
+echo "$TOKEN" > "$TARGET_FILE"
+chmod 600 "$TARGET_FILE"
+echo "Token saved to $TARGET_FILE"
