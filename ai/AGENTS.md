@@ -4,5 +4,7 @@
     - User may manually edit this file. Always consult the file before processing new user prompts.
     - Section order: TODO (user appends new task here so process them and move to appropriate sections below), Future Enhancements, Skipped, Completed.
     - Do not get rid of skipped todos, move them to skipped section with explanation.
-- User may left comments in files that contains "@claude". Always do what that comment asks and erase it when done.
+- User may left comments in files that contains "@claude"
+    - Always do what that comment asks and erase it when done.
+    - When user says `reviewed`, `continue` or something similar, it means you need to check and process these review comments.
 - files under `.worktrees` or `worktree` are git worktree and must be ignored.
