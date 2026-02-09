@@ -5,3 +5,4 @@
     - Section order: TODO (user appends new task here so process them and move to appropriate sections below), Future Enhancements, Skipped, Completed.
     - Do not get rid of skipped todos, move them to skipped section with explanation.
 - User may left comments in files that contains "@claude". Always do what that comment asks and erase it when done.
+- files under `.worktrees` or `worktree` are git worktree and must be ignored.
