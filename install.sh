@@ -51,6 +51,7 @@ for p in \
     "/.claude/CLAUDE.md" \
     "/.config/opencode/AGENTS.md" \
     "/.config/opencode/opencode.jsonc" \
+    "/.docker/mcp/registry.yaml" \
 ; do
     path="${HOME}${p}"
     echo "Processing $path"
@@ -69,6 +70,9 @@ ln -sf "$PWD/ai/AGENTS.md" "$HOME/.claude/CLAUDE.md"
 mkdir -p "$HOME/.config/opencode"
 ln -sf "$PWD/ai/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
 ln -sf "$PWD/ai/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
+mkdir -p "$HOME/.docker/mcp"
+ln -sf "$PWD/mcp/registry.yaml" "$HOME/.docker/mcp/registry.yaml"
+cp "$PWD/mcp/secrets.example" "$HOME/.docker/mcp/secrets.example"
 
 # create empty ~/.gitconfig for local git config
 # by default, `git config` writes config to ~/.config/git/config, which will be
