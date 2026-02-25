@@ -6,3 +6,7 @@
 
 # I don't know what the fuck this is
 .docker
+
+# git worktree
+.worktrees
+worktrees
