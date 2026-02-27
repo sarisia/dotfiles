@@ -41,3 +41,6 @@ fi
 
 # AWS
 export AWS_REGION=ap-northeast-1
+
+# Docker MCP Gateway
+export DOCKER_MCP_IN_CONTAINER=1
