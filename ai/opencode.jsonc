@@ -13,32 +13,52 @@
     "github-copilot": {
       "models": {
         "gpt-5.3-codex": {
-          "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"]
+          "name": "GPT-5.3-Codex",
+          "family": "gpt-codex",
+          "release_date": "2026-02-05",
+          "attachment": true,
+          "reasoning": true,
+          "temperature": false,
+          "tool_call": true,
+          "last_updated": "2026-02-05",
+          "knowledge": "2025-08-31",
+          "structured_output": true,
+          "open_weights": false,
+          "variants": {
+            "low": {
+              "reasoningEffort": "low",
+              "reasoningSummary": "auto",
+              "include": ["reasoning.encrypted_content"]
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "reasoningSummary": "auto",
+              "include": ["reasoning.encrypted_content"]
+            },
+            "high": {
+              "reasoningEffort": "high",
+              "reasoningSummary": "auto",
+              "include": ["reasoning.encrypted_content"]
+            },
+            "xhigh": {
+              "reasoningEffort": "xhigh",
+              "reasoningSummary": "auto",
+              "include": ["reasoning.encrypted_content"]
+            }
           },
-        "variants": {
-              "low": {
-                "reasoningEffort": "low",
-                "reasoningSummary": "auto",
-                "include": ["reasoning.encrypted_content"]
-              },
-              "medium": {
-                "reasoningEffort": "medium",
-                "reasoningSummary": "auto",
-                "include": ["reasoning.encrypted_content"]
-              },
-              "high": {
-                "reasoningEffort": "high",
-                "reasoningSummary": "auto",
-                "include": ["reasoning.encrypted_content"]
-              },
-              "xhigh": {
-                "reasoningEffort": "xhigh",
-                "reasoningSummary": "auto",
-                "include": ["reasoning.encrypted_content"]
-              }
-          } 
+          "cost": {
+            "input": 0,
+            "output": 0
+          },
+          "limit": {
+            "context": 400000,
+            "input": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": ["text", "image", "pdf"],
+            "output": ["text"]
+          }
         }
       }
     }
