@@ -1,3 +1,5 @@
+- NEVER refactor or format existing code unless explicitly asked by the user
+- NEVER invoke real APIs
 - User may left comments in files that contains "@claude"
     - Always do what that comment asks and erase it when done.
     - When user says `reviewed`, `continue` or something similar, it means you need to check and process these review comments.
