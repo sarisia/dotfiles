@@ -23,6 +23,9 @@ set color_git_str 000000
 alias ll="ls -l"
 alias lla="ls -al"
 alias sso="aws sso login"
+if type -q explorer.exe
+    alias open="explorer.exe"
+end
 
 # asdf
 if type -q brew && test -e (brew --prefix asdf)"/libexec/asdf.fish"
