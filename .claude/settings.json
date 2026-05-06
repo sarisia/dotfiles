@@ -1,10 +1,11 @@
 {
-  "workspaceTrustEnabled": false,
   "permissions": {
     "allow": [
       "Edit",
       "Write",
       "NotebookEdit"
     ]
-  }
+  },
+  "workspaceTrustEnabled": false,
+  "remoteControlAtStartup": true
 }
