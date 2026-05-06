@@ -1,0 +1,10 @@
+{
+  "workspaceTrustEnabled": false,
+  "permissions": {
+    "allow": [
+      "Edit",
+      "Write",
+      "NotebookEdit"
+    ]
+  }
+}

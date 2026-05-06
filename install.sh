@@ -47,17 +47,22 @@ for f in .config/* ; do
 done
 
 # ai agents
+# .claude dir
+if [ -L "$HOME/.claude" ]; then
+    rm "$HOME/.claude"
+elif [ -d "$HOME/.claude" ]; then
+    mv "$HOME/.claude" "$HOME/.claude.old"
+fi
+ln -sf "$PWD/.claude" "$HOME/.claude"
+
+# opencode
 for p in \
-    "/.claude/CLAUDE.md" \
-    "/.config/opencode/AGENTS.md" \
     "/.config/opencode/opencode.jsonc" \
-    "/.docker/opencode/skills" \
     "/.docker/mcp/registry.yaml" \
 ; do
     path="${HOME}${p}"
     echo "Processing $path"
     if [ -f "$path" ]; then
-        # if symlink, remove. Otherwise, rename.
         if [ -L "$path" ] ; then
             rm "$path"
         else
@@ -65,13 +70,8 @@ for p in \
         fi
     fi
 done
-
-mkdir -p "$HOME/.claude"
-ln -sf "$PWD/ai/AGENTS.md" "$HOME/.claude/CLAUDE.md"
 mkdir -p "$HOME/.config/opencode"
-ln -sf "$PWD/ai/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
-ln -sf "$PWD/ai/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
-ln -sf "$PWD/ai/skills" "$HOME/.config/opencode/skills"
+ln -sf "$PWD/.claude/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
 mkdir -p "$HOME/.docker/mcp"
 ln -sf "$PWD/mcp/registry.yaml" "$HOME/.docker/mcp/registry.yaml"
 cp "$PWD/mcp/secrets.example" "$HOME/.docker/mcp/secrets.example"
