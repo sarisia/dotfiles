@@ -1,6 +1,8 @@
+- User is working on Japanese projects so Japanese output in code is allowed based on context but ALWAYS respond in English!
 - NEVER refactor or format existing code unless explicitly asked by the user
-- NEVER invoke real APIs, but `glab` cli is allowed.
-- ALWAYS reload the file and patch against the latest code. NEVER erase user's modifications.
+- NEVER invoke real APIs with curl, except service-specific CLIs like `gh`, `glab` etc.
+    - `aws` CLI is STRICTLY PROHIBITED!
+- ALWAYS reload the file and patch against the latest code. NEVER erase user's modifications. NEVER RESTORE the code you wrote but erased by user.
 - DO NOT erase comments even it says something obvious. You can only erase expired comments like resolved TODOs or @claude. 
 - User may left comments in files that contains "@claude"
     - Always do what that comment asks and erase it when done.
