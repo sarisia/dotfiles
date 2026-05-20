@@ -11,7 +11,7 @@
     "plan-opus": {
       "description": "Only do planning and output detailed execution plans for others to follow",
       "mode": "primary",
-      "model": "github-copilot/claude-opus-4.6",
+      "model": "github-copilot/gpt-5.4",
       "temperature": 0.2,
       "color": "warning",
       "prompt": "only do planning and output the detailed plan that other people or agent can execute."
@@ -19,7 +19,7 @@
     "build-opus": {
       "description": "Build and modify code with full tool access",
       "mode": "primary",
-      "model": "github-copilot/claude-sonnet-4.6",
+      "model": "github-copilot/gpt-5.4",
       "temperature": 0.5,
       "color": "info"
     }
