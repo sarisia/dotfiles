@@ -9,17 +9,19 @@
       "disable": true
     },
     "plan-opus": {
-      "description": "Only do planning and output detailed execution plans for others to follow",
+      "description": "Only do planning and output plans for others to follow",
       "mode": "primary",
       "model": "github-copilot/gpt-5.4",
+      "reasoningEffort": "high",
       "temperature": 0.2,
       "color": "warning",
-      "prompt": "only do planning and output the detailed plan that other people or agent can execute."
+      "prompt": "Only do planning and output the plan that other people or agent can execute. Plan does not need to be super-detailed as source code level, but must contain clear architecture and must be clear enough for others to follow."
     },
     "build-opus": {
       "description": "Build and modify code with full tool access",
       "mode": "primary",
       "model": "github-copilot/gpt-5.4",
+      "reasoningEffort": "high",
       "temperature": 0.5,
       "color": "info"
     }
