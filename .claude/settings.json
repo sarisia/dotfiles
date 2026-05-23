@@ -4,8 +4,10 @@
       "Edit",
       "Write",
       "NotebookEdit"
-    ]
+    ],
+    "defaultMode": "bypassPermissions"
   },
+  "remoteControlAtStartup": true,
   "workspaceTrustEnabled": false,
-  "remoteControlAtStartup": true
+  "agentPushNotifEnabled": true
 }
