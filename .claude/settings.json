@@ -7,6 +7,7 @@
     ],
     "defaultMode": "bypassPermissions"
   },
+  "model": "opusplan",
   "remoteControlAtStartup": true,
   "workspaceTrustEnabled": false,
   "agentPushNotifEnabled": true
