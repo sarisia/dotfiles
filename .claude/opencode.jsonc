@@ -1,6 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "permission": "allow",
+  "compaction": {
+    "auto": false,
+    "prune": true
+  },
   "agent": {
     "plan": {
       "disable": true
