@@ -8,7 +8,9 @@
     "defaultMode": "bypassPermissions"
   },
   "model": "opusplan",
+  "skipDangerousModePermissionPrompt": true,
   "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true,
   "workspaceTrustEnabled": false,
-  "agentPushNotifEnabled": true
+  "skipAutoPermissionPrompt": true
 }
