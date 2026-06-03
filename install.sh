@@ -1,12 +1,29 @@
 #!/bin/bash
 
 # install script
-# symlinks all the dotfiles in this dir
+# copies all the dotfiles in this dir
 # and also in `.config/`
 
 # exclude ./ , ../ and .git from glob result
 # also enables dotglob option
 GLOBIGNORE=".:..:.git"
+
+# prepare_target PATH
+#   - symlink           -> remove (devcontainers break on symlinks)
+#   - real file/dir     -> rename to PATH.old (or, if PATH.old already exists,
+#                          just remove PATH)
+prepare_target() {
+    local path="$1"
+    if [ -L "$path" ]; then
+        rm -rf "$path"
+    elif [ -e "$path" ]; then
+        if [ -e "$path.old" ]; then
+            rm -rf "$path"
+        else
+            mv "$path" "$path.old"
+        fi
+    fi
+}
 
 # toplevel dotfiles
 for f in .* ; do
@@ -14,66 +31,33 @@ for f in .* ; do
         continue
     fi
 
-    # if the target file already exists, rename to name.old
-    if [ -f "$HOME/$f" ]; then
-        # if symlink, remove. Otherwise, rename.
-        if [ -L "$HOME/$f" ] ; then
-            rm "$HOME/$f"
-        else
-            mv "$HOME/$f" "$HOME/$f.old"
-        fi
-    fi
-
-    ln -sf "$PWD/$f" "$HOME/$f"
+    prepare_target "$HOME/$f"
+    cp -a "$PWD/$f" "$HOME/$f"
 done
 
 # everything in .config dir
 # first ready the .config dir
 mkdir -p "$HOME/.config"
 
-# then link everything
+# then copy everything
 for f in .config/* ; do
-    # if the target dir is already exists, rename to name.old
-    if [ -e "$HOME/$f" ] ; then
-        # if symlink, remove. Otherwise, rename.
-        if [ -L "$HOME/$f" ] ; then
-            rm "$HOME/$f"
-        else
-            mv "$HOME/$f" "$HOME/$f.old"
-        fi
-    fi
-
-    ln -sf "$PWD/$f" "$HOME/$f"
+    prepare_target "$HOME/$f"
+    cp -a "$PWD/$f" "$HOME/$f"
 done
 
 # ai agents
 # .claude dir
-if [ -L "$HOME/.claude" ]; then
-    rm "$HOME/.claude"
-elif [ -d "$HOME/.claude" ]; then
-    mv "$HOME/.claude" "$HOME/.claude.old"
-fi
-ln -sf "$PWD/.claude" "$HOME/.claude"
+prepare_target "$HOME/.claude"
+cp -a "$PWD/.claude" "$HOME/.claude"
 
 # opencode
-for p in \
-    "/.config/opencode/opencode.jsonc" \
-    "/.docker/mcp/registry.yaml" \
-; do
-    path="${HOME}${p}"
-    echo "Processing $path"
-    if [ -f "$path" ]; then
-        if [ -L "$path" ] ; then
-            rm "$path"
-        else
-            mv "$path" "$path.old"
-        fi
-    fi
-done
 mkdir -p "$HOME/.config/opencode"
-ln -sf "$PWD/.claude/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
+prepare_target "$HOME/.config/opencode/opencode.jsonc"
+cp -a "$PWD/.claude/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
+
 mkdir -p "$HOME/.docker/mcp"
-ln -sf "$PWD/mcp/registry.yaml" "$HOME/.docker/mcp/registry.yaml"
+prepare_target "$HOME/.docker/mcp/registry.yaml"
+cp -a "$PWD/mcp/registry.yaml" "$HOME/.docker/mcp/registry.yaml"
 cp "$PWD/mcp/secrets.example" "$HOME/.docker/mcp/secrets.example"
 
 # create empty ~/.gitconfig for local git config
@@ -88,8 +72,9 @@ else
 fi
 
 # create symlink points dotfiles directory if $HOME/dotfiles does not exist
-# since some runtimes like github codespaces clones dotfiles directory to
-# weird path like `/workspaces/.codespaces/.persistedshare/dotfiles`
+# GitHub Codespaces clones dotfiles to a non-standard path like
+# `/workspaces/.codespaces/.persistedshare/dotfiles`, so this symlink lets
+# .profile's PATH and dot_update resolve ~/dotfiles to the real repo location.
 if [ ! -e "$HOME/dotfiles" ]; then
     ln -sf "$PWD" "$HOME/dotfiles"
 fi
