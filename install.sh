@@ -47,8 +47,15 @@ done
 
 # ai agents
 # .claude dir
-prepare_target "$HOME/.claude"
-cp -a "$PWD/.claude" "$HOME/.claude"
+# If ~/.claude is a symlink (e.g. a devcontainer links it to a persisted
+# location), leave it untouched and skip our copy. Otherwise do the normal
+# remove-and-copy.
+if [ -L "$HOME/.claude" ]; then
+    true
+else
+    prepare_target "$HOME/.claude"
+    cp -a "$PWD/.claude" "$HOME/.claude"
+fi
 
 # opencode
 mkdir -p "$HOME/.config/opencode"
