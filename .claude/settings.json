@@ -12,5 +12,6 @@
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
   "workspaceTrustEnabled": false,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "tui": "fullscreen"
 }

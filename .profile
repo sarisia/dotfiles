@@ -44,3 +44,6 @@ export AWS_REGION=ap-northeast-1
 
 # Docker MCP Gateway
 export DOCKER_MCP_IN_CONTAINER=1
+
+# Claude Code color problem workaround
+export FORCE_COLOR=3
