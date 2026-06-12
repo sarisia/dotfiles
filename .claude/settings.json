@@ -13,5 +13,6 @@
   "agentPushNotifEnabled": true,
   "workspaceTrustEnabled": false,
   "skipAutoPermissionPrompt": true,
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "showClearContextOnPlanAccept": true
 }
