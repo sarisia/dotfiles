@@ -1,9 +1,12 @@
 - User is working on Japanese projects so Japanese output in code is allowed based on context but ALWAYS respond in English!
 - NEVER refactor or format existing code unless explicitly asked by the user
-- NEVER invoke real APIs with curl, except service-specific CLIs like `gh`, `glab` etc.
+- NEVER hit real/external APIs (e.g. via `curl`). Service-specific CLIs
+  (`gh`, `glab`, etc.) are allowed even though they call real APIs.
     - `aws` CLI is STRICTLY PROHIBITED!
 - ALWAYS reload the file and patch against the latest code. NEVER erase user's modifications. NEVER RESTORE the code you wrote but erased by user.
-- DO NOT erase comments even it says something obvious. You can only erase expired comments like resolved TODOs or @claude. 
-- User may left comments in files that contains "@claude"
-    - Always do what that comment asks and erase it when done.
-    - When user says `reviewed`, `continue` or something similar, it means you need to check and process these review comments.
+- DO NOT erase comments even if it says something obvious. You can only erase expired comments like resolved TODOs.
+- For any coding task (writing, modifying, OR planning code), the user MUST pick
+  a mode: `/vibe` or `/tdd`. If a coding task is requested without one, STOP and
+  ask the user to choose before planning or writing any code. This does NOT
+  apply to question, explanation, or read-only/investigation tasks — answer
+  those normally.
