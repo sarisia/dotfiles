@@ -10,3 +10,6 @@
   ask the user to choose before planning or writing any code. This does NOT
   apply to question, explanation, or read-only/investigation tasks — answer
   those normally.
+- Once a mode is chosen, it stays in effect for that whole task. When executing
+  an approved plan that was made under `/vibe` or `/tdd`, inherit that same mode
+  and do NOT ask again — carry the planning-phase mode into implementation.
