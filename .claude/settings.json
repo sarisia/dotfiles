@@ -14,5 +14,6 @@
   "workspaceTrustEnabled": false,
   "skipAutoPermissionPrompt": true,
   "tui": "fullscreen",
-  "showClearContextOnPlanAccept": true
+  "showClearContextOnPlanAccept": true,
+  "autoCompactEnabled": false
 }
