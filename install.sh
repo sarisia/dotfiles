@@ -57,6 +57,15 @@ else
     cp -a "$PWD/.claude" "$HOME/.claude"
 fi
 
+# Codex CLI
+mkdir -p "$HOME/.agents"
+prepare_target "$HOME/.agents/skills"
+cp -a "$PWD/.claude/skills" "$HOME/.agents/skills"
+
+mkdir -p "$HOME/.codex"
+prepare_target "$HOME/.codex/config.toml"
+cp -a "$PWD/.codex/config.toml" "$HOME/.codex/config.toml"
+
 # opencode
 mkdir -p "$HOME/.config/opencode"
 prepare_target "$HOME/.config/opencode/opencode.jsonc"

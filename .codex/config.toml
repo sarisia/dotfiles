@@ -1,0 +1,19 @@
+# Codex CLI user config. install.sh installs this to ~/.codex/config.toml.
+# Mirrors .claude/settings.json's trusted local workflow where Codex has full
+# filesystem/network access and does not stop for permission prompts.
+
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
+plan_mode_reasoning_effort = "xhigh"
+service_tier = "default"
+
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+web_search = "live"
+
+[tui]
+notifications = true
+alternate_screen = "always"
+
+[notice]
+hide_full_access_warning = true
