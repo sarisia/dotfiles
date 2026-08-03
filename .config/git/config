@@ -2,6 +2,8 @@
 	prune = true
 [rebase]
 	autoStash = true
+[rerere]
+	enabled = true
 [pull]
 	rebase = true
 [push]
