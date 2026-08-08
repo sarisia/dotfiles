@@ -5,7 +5,8 @@
 *:Zone.Identifier
 
 # I don't know what the fuck this is
-.docker
+.docker/*
+!.docker/mcp
 
 # git worktree
 .worktrees

@@ -48,8 +48,7 @@ link .claude/skills          .agents/skills
 
 # docker mcp gateway
 link mcp/registry.yaml       .docker/mcp/registry.yaml
-
-cp "$PWD/mcp/secrets.example" "$HOME/.docker/mcp/secrets.example"
+link mcp/secrets.example      .docker/mcp/secrets.example
 
 # create empty ~/.gitconfig for local git config
 # by default, `git config` writes config to ~/.config/git/config, which will be
