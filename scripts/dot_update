@@ -10,6 +10,9 @@ git fetch --prune
 # Local changes stay in the stash (never popped), local commits in the reflog.
 git --no-pager log --oneline '@{upstream}..HEAD'
 git --no-pager diff HEAD
+# An earlier autostash pop may have left unmerged entries in the index; git
+# refuses to stash those, so mark them resolved (conflict markers and all).
+git add -A
 git stash push --include-untracked --message "dot_update: $(date +%F_%T)"
 git reset --hard '@{upstream}'
 
