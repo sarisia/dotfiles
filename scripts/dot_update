@@ -1,5 +1,16 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
-(cd ~/dotfiles && git pull && ./install.sh)
+cd ~/dotfiles
+
+git fetch --prune
+
+# Show whatever is about to be thrown away, then force the tree to upstream.
+# Local changes stay in the stash (never popped), local commits in the reflog.
+git --no-pager log --oneline '@{upstream}..HEAD'
+git --no-pager diff HEAD
+git stash push --include-untracked --message "dot_update: $(date +%F_%T)"
+git reset --hard '@{upstream}'
+
+./install.sh
