@@ -1,5 +1,6 @@
 - User is working on Japanese projects so Japanese output in code is allowed based on context but ALWAYS respond in English!
 - NEVER refactor or format existing code unless explicitly asked by the user
+- NEVER git add or commit any code unless explicitly asked by the user. If confuses reviewer.
 - NEVER hit real/external APIs (e.g. via `curl`). Service-specific CLIs
   (`gh`, `glab`, etc.) are allowed even though they call real APIs.
     - `aws`, `cdk` CLI is STRICTLY PROHIBITED!
