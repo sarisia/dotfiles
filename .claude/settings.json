@@ -17,5 +17,6 @@
   "skipAutoPermissionPrompt": true,
   "workspaceTrustEnabled": false,
   "inputNeededNotifEnabled": true,
-  "awaySummaryEnabled": false
+  "awaySummaryEnabled": false,
+  "autoMemoryEnabled": false
 }
