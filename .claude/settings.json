@@ -7,16 +7,15 @@
     ],
     "defaultMode": "bypassPermissions"
   },
-  "model": "opus",
+  "model": "opus[1m]",
+  "awaySummaryEnabled": false,
   "showClearContextOnPlanAccept": false,
   "tui": "fullscreen",
+  "autoMemoryEnabled": false,
   "skipDangerousModePermissionPrompt": true,
   "autoCompactEnabled": false,
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "workspaceTrustEnabled": false,
   "inputNeededNotifEnabled": true,
-  "awaySummaryEnabled": false,
-  "autoMemoryEnabled": false
+  "agentPushNotifEnabled": true,
+  "workspaceTrustEnabled": false
 }
