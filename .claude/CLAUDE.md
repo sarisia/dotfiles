@@ -13,5 +13,3 @@
 - When generating a plan, ALWAYS lead with a short numbered `## Steps` list (one line
   per step, no details), then `---`, then one detailed section per step below it.
   Keep the top list scannable; put file paths, code, and verification in the sections.
-- For any coding task (writing, modifying, OR planning code), the user MAY pick
-  a mode: `/vibe` or `/tdd`. If a coding task is requested without one, default to `/vibe`.
