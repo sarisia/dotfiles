@@ -10,5 +10,8 @@
 - Keep comments ABSOLUTELY FUCKING MINIMAL. Only add comments when necessary to explain the code or provide context. Avoid redundant comments that state the obvious.
 - ENGLISH COMMENTS!!!!!!
 - If you are asked to do something after the previous plan was implemented (or user explicitly states it's refinement task), do not include already implemented steps in the plan. Only include new steps.
+- When generating a plan, ALWAYS lead with a short numbered `## Steps` list (one line
+  per step, no details), then `---`, then one detailed section per step below it.
+  Keep the top list scannable; put file paths, code, and verification in the sections.
 - For any coding task (writing, modifying, OR planning code), the user MAY pick
   a mode: `/vibe` or `/tdd`. If a coding task is requested without one, default to `/vibe`.
