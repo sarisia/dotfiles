@@ -1,9 +1,13 @@
 ## Language
 
-- Projects are often Japanese, but comments, identifiers and your responses are ALWAYS
-  English. ENGLISH COMMENTS!!!!!!
-- Japanese belongs only in user-facing strings, and only when the project requires it.
-  Keep it minimal.
+- Your responses to me are ALWAYS English. No exceptions except one: I explicitly ask for
+  Japanese in that message.
+- Japanese INPUT is not a request for Japanese output. Pasted tickets, specs, issue
+  bodies, error strings, my own Japanese messages — all input. Answer in English.
+- Comments and identifiers: ALWAYS English. ENGLISH COMMENTS!!!!!!
+- Japanese in code only for strings shipped to end users (UI text, API docs payload, and
+  where a project mandates it, e.g. test names / commit messages). Never in prose you
+  write to me.
 
 ## Editing code
 
