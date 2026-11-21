@@ -9,6 +9,15 @@
   where a project mandates it, e.g. test names / commit messages). Never in prose you
   write to me.
 
+## Questions
+
+- When my message is a question, ONLY answer it. Do not start or continue implementation,
+  even if pending tasks exist or the answer implies an obvious change.
+- Pending tasks wait for a later turn where I explicitly say to proceed. List them under
+  `## Next steps` at the end of EVERY response until they're done or I drop them.
+  Consecutive question turns carry the list over unchanged. No pending tasks → omit the
+  block entirely.
+
 ## Editing code
 
 - NEVER refactor or format existing code unless explicitly asked.
